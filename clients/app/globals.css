@@ -13,3 +13,8 @@ body {
 html {
   @apply  h-full;
 }
+
+@font-face {
+  font-family: 'GillSansNova';
+  src: url('../public/fonts/GillSansNova-CnMedium.ttf');
+}

@@ -12,7 +12,7 @@ const Navbar = () => {
                 items-center
             "
         > 
-            <img className="h-8 lg:h-14" src="/images/logoGEA.png" alt="" />
+            <img className="h-8 lg:h-10" src="/images/logoGEA.png" alt="" />
         </div>
 
     </nav>
