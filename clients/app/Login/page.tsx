@@ -8,7 +8,7 @@ const page = () => {
 
     return (
         <div className="relative h-full w-full bg-[url('/images/newbg.png')] bg-no-repeat bg-center bg-fixed bg-cover" >
-            <div className='bg-black w-full h-full lg:bg-opacity-50'>
+            <div className='bg-black w-full h-full bg-opacity-50'>
                 <nav className='px-12 py-5 flex justify-center' >
                     <img src="/images/logoGEA.png" alt="Logo" className='h-12 self-center'/>
                 </nav>
