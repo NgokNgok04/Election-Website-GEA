@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from '../components/navbar'
 const page = () => {
   return (
-    <div className="relative h-full w-full bg-[url('/images/backgroundnew.png')] bg-no-repeat bg-center bg-left bg-cover">
+    <div className="relative h-full w-full bg-[url('/images/backgroundnew.png')] bg-no-repeat bg-center bg-cover">
       <Navbar />
       <div className='absolute top-[30%] md:top-[20%] ml-4 md:ml-16'>
         <p className='
