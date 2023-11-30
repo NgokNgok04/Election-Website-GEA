@@ -1,0 +1,13 @@
+.custom-toast-display {
+    height: 70px;
+    align-items: center;
+}
+
+.custom-toast-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.custom-toast-title {
+    font-size: 4px;
+}
