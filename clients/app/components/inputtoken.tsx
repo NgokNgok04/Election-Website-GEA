@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Link from 'next/link';
 interface InputProps{
     id: string;
     onChange: any;
@@ -10,28 +11,39 @@ const inputtoken: React.FC<InputProps> = ({
     id,
     label,
     type,
-    onChange,
 }) => {
+    const [token, setToken] = useState('');
+    const handleTokenSubmit = (ev:any) => {
+      ev.preventDefault();
+  
+      const isValidToken = validateToken(token);
+      if (isValidToken) {
+      }
+    }
+  
+    const validateToken = (token: any) => {
+      return token === '2PGV5W8G'
+    };
     return (
         <div className="relative">
             <input
-                onChange={onChange}
+                onChange={(e) => setToken(e.target.value)}
                 type={type}
                 id= {id}
                 className="
-                block
-                rounded-md
-                px-6
-                pt-6
-                pb-1
-                w-full
-                text-md
-                text-white
-                bg-neutral-700
-                appearance-none
-                focus:outline-none
-                focus:ring-0
-                peer
+                    block
+                    rounded-md
+                    px-6
+                    pt-6
+                    pb-1
+                    w-full
+                    text-md
+                    text-white
+                    bg-neutral-700
+                    appearance-none
+                    focus:outline-none
+                    focus:ring-0
+                    peer
                 "
                 placeholder=' '
             />
@@ -57,7 +69,9 @@ const inputtoken: React.FC<InputProps> = ({
                     {label}
             </label>
 
-            <button className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
+            <button 
+                onSubmit={handleTokenSubmit}
+                className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
                 Submit
             </button>
         </div>

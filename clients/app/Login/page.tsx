@@ -31,7 +31,7 @@ const page = () => {
     });
     const eventStartTime: Date = new Date('2023-11-30T18:23:00Z');
     const startTime: number = eventStartTime.getTime();
-    const eventEndTime: Date = new Date('2023-12-01T17:00:00Z');
+    const eventEndTime: Date = new Date('2023-12-02T17:00:00Z');
     const endTime: number = eventEndTime.getTime();
     
     const LoginHandler = useCallback(() => {
@@ -41,8 +41,8 @@ const page = () => {
 
     return (
         <div className="relative h-full w-full 
-         bg-[url('/images/newbg.png')] bg-no-repeat bg-center bg-cover
-         md:bg-[url('/images/newbg.png')] md:bg-center md:bg-fixed md:bg-cover
+            bg-[url('/images/newbg.png')] bg-no-repeat bg-center bg-cover
+            md:bg-[url('/images/newbg.png')] md:bg-center md:bg-fixed md:bg-cover
          " >
             <div className='bg-black w-full h-full bg-opacity-50'>
                 <nav className='px-12 py-5 flex justify-center' >

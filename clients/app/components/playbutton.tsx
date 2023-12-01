@@ -1,15 +1,14 @@
 import React , {useState} from 'react'
 import Input from './inputtoken';
 const playbutton = () => {
-    const [password,setPassword] = useState('');
-    const [showPopup, setShowPopup] = useState(false);
+  const [password,setPassword] = useState('');
+  const [showPopup, setShowPopup] = useState(false);
+  const handleClick = () => {
+    setShowPopup(true);
+  };
 
-    const handleClick = () => {
-      setShowPopup(true);
-    };
-  
-    const closePopup = () => {
-      setShowPopup(false);
+  const closePopup = () => {
+    setShowPopup(false);
     };
   
 
@@ -46,7 +45,8 @@ const playbutton = () => {
                         onChange ={(ev:any) => setPassword(ev.target.value)}
                         id = "password"
                         type="password"
-                        value={password}/>
+                        value={password}
+                    />
                 </div>
             </div>
         )}
