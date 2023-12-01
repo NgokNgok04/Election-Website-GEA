@@ -1,4 +1,5 @@
 import React from "react"
+import Link from 'next/link'
 const Navbar = () => {
   return (
     <nav className="w-full fixed z-40">
@@ -11,8 +12,9 @@ const Navbar = () => {
                 flex-row
                 items-center
             "
-        > 
+        > <Link href="/Login">
             <img className="h-8 lg:h-10" src="/images/logoGEA.png" alt="" />
+          </Link>
         </div>
 
     </nav>
