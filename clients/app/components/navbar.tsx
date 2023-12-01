@@ -12,7 +12,7 @@ const Navbar = () => {
                 flex-row
                 items-center
             "
-        > <Link href="/Login">
+        > <Link href="/login">
             <img className="h-8 lg:h-10" src="/images/logoGEA.png" alt="" />
           </Link>
         </div>

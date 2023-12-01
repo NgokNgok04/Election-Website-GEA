@@ -20,10 +20,10 @@ model kandidat{
 
 model pemilih{
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  nim String
+  username String
+  password String
+  token String
   isVote Int
-  startVote DateTime @db.Date
-  endVote DateTime @db.Date
 }
 
 model pemilihan{

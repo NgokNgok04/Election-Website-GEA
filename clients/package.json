@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/core": "^0.18.4",
+    "@auth/prisma-adapter": "^1.0.9",
     "@prisma/client": "^5.6.0",
     "@sweetalert2/theme-dark": "^5.0.15",
     "@sweetalert2/themes": "^5.0.15",
     "next": "14.0.3",
+    "next-auth": "^4.24.5",
     "react": "^18",
     "react-countdown": "^2.3.5",
     "react-dom": "^18",
@@ -21,7 +24,7 @@
     "sweetalert2": "^11.10.1"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.10.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.16",
@@ -30,6 +33,12 @@
     "postcss": "^8.4.31",
     "prisma": "^5.6.0",
     "tailwindcss": "^3.3.5",
-    "typescript": "^5"
-  }
+    "ts-node": "^10.9.1",
+    "typescript": "^5.3.2"
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": "next.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
