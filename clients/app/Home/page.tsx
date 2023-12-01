@@ -11,7 +11,7 @@ const page = () => {
       <div className='absolute top-[30%] md:top-[20%] ml-4 md:ml-16'>
         <p className='
           text-white 
-          text-7xl 
+          text-6xl sm:text-7xl 
           h-full
           w-[100%] 
           lg:text-8xl 
