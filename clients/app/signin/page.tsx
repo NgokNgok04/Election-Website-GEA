@@ -32,7 +32,6 @@ const page = () => {
           redirect: true,
           callbackUrl:'/Home'
         })
-        // router.push('/berhasil');
     }
     
     return (
