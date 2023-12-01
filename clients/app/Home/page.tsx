@@ -4,18 +4,14 @@ import Navbar from '../components/navbar'
 import PlayButton from '../components/playbutton'
 import Plusbutton from '../components/plusbutton';
 import Likebutton from '../components/likebutton';
-import Swal from 'sweetalert2'
 const page = () => {
-  function handleClick() {
-    console.log
-  }
   return (
     <div className="relative h-full w-full bg-[url('/images/backgroundnew.png')] bg-no-repeat bg-center bg-cover">
       <Navbar />
       <div className='absolute top-[30%] md:top-[20%] ml-4 md:ml-16'>
         <p className='
           text-white 
-          text-7xl 
+          text-6xl sm:text-7xl 
           h-full
           w-[100%] 
           lg:text-8xl 
