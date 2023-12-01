@@ -29,9 +29,9 @@ const page = () => {
             toast.addEventListener('mouseleave', Swal.resumeTimer);
         }
     });
-    const eventStartTime: Date = new Date('2023-12-06T17:00:00Z');
+    const eventStartTime: Date = new Date('2023-11-30T18:23:00Z');
     const startTime: number = eventStartTime.getTime();
-    const eventEndTime: Date = new Date('2023-12-08T17:00:00Z');
+    const eventEndTime: Date = new Date('2023-12-01T17:00:00Z');
     const endTime: number = eventEndTime.getTime();
     
     const LoginHandler = useCallback(() => {
