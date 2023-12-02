@@ -5,14 +5,18 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
 import './page.scss';
 import './toast.css';
 import CountDown from '../components/countDown/countDown';
+import { signIn, useSession } from "next-auth/react"
+import { useRouter } from "next/router"
 
 const page = () => {
-    const [email,setEmail] = useState('');
-    const [nim,setNIM] = useState('');
-    const [password,setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [nim, setNIM] = useState('');
+    const [password, setPassword] = useState('');
+
+    const {data: session} = useSession();
 
     const Toast = Swal.mixin({
-        toast:true,
+        toast: true,
         position: 'top',
         showConfirmButton: false,
         timer: 1500,
@@ -24,7 +28,7 @@ const page = () => {
             icon: 'custom-toast-icon',
         },
         timerProgressBar: true,
-        didOpen: (toast : HTMLElement) => {
+        didOpen: (toast: HTMLElement) => {
             toast.addEventListener('mouseenter', Swal.stopTimer);
             toast.addEventListener('mouseleave', Swal.resumeTimer);
         }
@@ -33,11 +37,21 @@ const page = () => {
     const startTime: number = eventStartTime.getTime();
     const eventEndTime: Date = new Date('2023-12-02T17:00:00Z');
     const endTime: number = eventEndTime.getTime();
-    
+
     const LoginHandler = useCallback(() => {
         console.log('nim:', nim);
         Toast.fire();
     }, [email, nim, password]);
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        signIn('credentials', {
+            username: nim,
+            password: password,
+            redirect: true,
+            callbackUrl: '/home'
+        })
+    }
 
     return (
         <div className="relative h-full w-full 
@@ -46,41 +60,43 @@ const page = () => {
          " >
             <div className='bg-black w-full h-full bg-opacity-50'>
                 <nav className='px-12 py-5 flex justify-center' >
-                    <img src="/images/logoGEA.png" alt="Logo" className='h-12 self-center'/>
+                    <img src="/images/logoGEA.png" alt="Logo" className='h-12 self-center' />
                 </nav>
                 {startTime > Date.now() && (
-                    <CountDown duration={startTime} className='my-5' title='Pemilihan akan dimulai dalam:'/>
+                    <CountDown duration={startTime} className='my-5' title='Pemilihan akan dimulai dalam:' />
                 )}
-                {startTime < Date.now() && endTime > Date.now() && (<CountDown duration={endTime} className='my-5' title='Pemilihan akan berakhir dalam:'/>)}
-                <div className='flex justify-center'>
-                    <div className='bg-black bg-opacity-70 px-16 py-16 self-center mt-2 max-w-md rounded-md w-full'>
-                        <h2 className='text-white text-4xl mb-8 font-semibold'>
-                            Login
-                        </h2> 
-                        <div className='flex flex-col gap-4'>
-                            <Input 
-                                label ="NIM"
-                                onChange ={(ev:any) => setNIM(ev.target.value)}
-                                id = "name"
-                                value={nim}
-                            />
-                            <Input 
-                                label ="Password"
-                                onChange ={(ev:any) => setPassword(ev.target.value)}
-                                id = "password"
-                                type= "password"
-                                value={password}
-                            />
-
-                            <button className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition' onClick={LoginHandler}>
+                {startTime < Date.now() && endTime > Date.now() && (<CountDown duration={endTime} className='my-5' title='Pemilihan akan berakhir dalam:' />)}
+                <form action="POST" onSubmit={handleSubmit}>
+                    <div className='flex justify-center'>
+                        <div className='bg-black bg-opacity-70 px-16 py-16 self-center mt-2 max-w-md rounded-md w-full'>
+                            <h2 className='text-white text-4xl mb-8 font-semibold'>
                                 Login
-                            </button>
+                            </h2>
+                            <div className='flex flex-col gap-4'>
+                                <Input
+                                    label="NIM"
+                                    onChange={(ev: any) => setNIM(ev.target.value)}
+                                    id="name"
+                                    value={nim}
+                                />
+                                <Input
+                                    label="Password"
+                                    onChange={(ev: any) => setPassword(ev.target.value)}
+                                    id="password"
+                                    type="password"
+                                    value={password}
+                                />
+
+                                <button className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition' onClick={LoginHandler} type='submit'>
+                                    Login
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
     )
-}   
+}
 
 export default page

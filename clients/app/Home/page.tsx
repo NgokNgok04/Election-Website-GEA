@@ -4,8 +4,12 @@ import Navbar from '../components/navbar'
 import PlayButton from '../components/playbutton'
 import Plusbutton from '../components/plusbutton';
 import Likebutton from '../components/likebutton';
+import { useSession } from "next-auth/react"
+
 const page = () => {
+  const {data: session, status} = useSession();
   return (
+
     <div className="relative h-full w-full bg-[url('/images/backgroundnew.png')] bg-no-repeat bg-center bg-cover">
       <Navbar />
       <div className='absolute top-[30%] md:top-[20%] ml-4 md:ml-16'>
@@ -20,7 +24,8 @@ const page = () => {
           font-GillSans
           tracking-widest
           '>
-           P E M I L U ' 2 3
+           P E M I L U ' 2 3 
+           {/* (Welcome {session?.user?.name}) */}
         </p>
         <p className='
           text-white 
