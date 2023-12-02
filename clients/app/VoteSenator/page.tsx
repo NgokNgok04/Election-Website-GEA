@@ -96,7 +96,7 @@ const VoteSenator: React.FC = () => {
       <div className="flex flex-wrap justify-center items-center gap-4">
         <div className='shrink'>
           <ImageCard
-            src="/images/livia1.jpg"
+            src="/images/livia.jpg"
             nama="Arkam Emilul Fata"
             nim="12021067"
             handleClick={() => handleCardClicked('1')}

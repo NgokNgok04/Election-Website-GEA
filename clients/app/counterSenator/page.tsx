@@ -9,12 +9,14 @@ const pages = () => {
           <CounterCard 
             src="/images/livia.jpg"
             nama="Livia"
-            nim="12021067" />
+            nim="12021067"
+            vote="1" />
 
           <CounterCard 
             src="/images/emptyBox.jpg"
             nama="Empty Box"
-            nim="XXXXXXXX"/>
+            nim="XXXXXXXX"
+            vote="1"/>
         </div>
 
         <button className='fixed w-32 bottom-0 left-1/2 transform -translate-x-1/2 bg-red-600 py-3 rounded-full

@@ -98,7 +98,7 @@ const VoteBPH: React.FC = () => {
       <div className="flex flex-wrap justify-center items-center gap-4">
         <div className='shrink'>
           <ImageCard
-            src="/images/arkan1.jpg"
+            src="/images/arkan.jpg"
             nama="Arkam Emilul Fata"
             nim="12021025"
             handleClick={() => handleCardClicked('1')}
@@ -107,7 +107,7 @@ const VoteBPH: React.FC = () => {
         </div>
         <div className='shrink'>
           <ImageCard
-            src="/images/timoy2.jpg"
+            src="/images/timoy.jpg"
             nama="Daniel Timothy Natanael Sihombing"
             nim="12021041"
             handleClick={() => handleCardClicked('2')}

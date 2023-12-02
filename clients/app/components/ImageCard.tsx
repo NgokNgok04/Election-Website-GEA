@@ -13,7 +13,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ src, nama, nim, handleClick, sele
     <div>
       <button
         onClick={handleClick}
-        className={`max-w-sm flex-shrink rounded-lg shadow bg-gray-800 hover:transition-transform 
+        className={`max-w-sm flex-shrink rounded-lg shadow bg-white hover:transition-transform 
           transition duration-150 ease-in-out hover:scale-105 hover:cursor-pointer'
           ${selected ? 'border-2 border-red-400 transition-all duration-150 ease-in-out ' : 'border border-transparent'}`}
       >
